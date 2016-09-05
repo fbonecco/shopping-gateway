@@ -7,20 +7,9 @@ use Cake\Network\Response;
 
 class CustomAuthenticate extends DigestAuthenticate
 {
-    public function authenticate(Request $request , Response $response)
-    {
-        print( "authenticate ");
-        return false;
-    }
-
-    public function getUser(Request $request) {
-      print( "getUser ");
-      return false;
-    }
 
     protected function _findUser($username, $password = null) {
-          print( "findUser ");
-          return false;
+          return array("id"=> 1, "username" => "cf6806763bc430bcc08b9436b6a35fd8", "password"=>"cf6806763bc430bcc08b9436b6a35fd8", "role"=>"admin");
     }
 
 }
