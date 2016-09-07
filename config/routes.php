@@ -53,6 +53,7 @@ Router::scope('/', function ($routes) {
 Router::scope('/api', function ($routes) {
     $routes->extensions(['json']);
     $routes->resources('Carts');
+    $routes->resources('Products');
 
 });
 

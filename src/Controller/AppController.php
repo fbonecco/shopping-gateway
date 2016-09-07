@@ -42,34 +42,25 @@ class AppController extends Controller
     {
 
         parent::initialize();
-        $this->log ($digestPass = DigestAuthenticate::password("root", "root", env('SERVER_NAME')));
+        // $this->log ($digestPass = DigestAuthenticate::password("root", "root", env('SERVER_NAME')));
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        $this->loadComponent('Auth', [
-            'authenticate' => ['Custom'],
-            'storage' => 'Memory',
-            'unauthorizedRedirect' => false,
-            'sessionKey'=> false
-        ]);
         // $this->loadComponent('Auth', [
-        //     'authenticate' => [
-        //         'Custom' => [
-        //             'fields' => ['username' => 'username', 'password' => 'api_key'],
-        //         ],
-        //     ],
+        //     'authenticate' => ['Custom'],
         //     'storage' => 'Memory',
-        //     'unauthorizedRedirect' => false
+        //     'unauthorizedRedirect' => false,
+        //     'sessionKey'=> false
         // ]);
     }
     public function isAuthorized($user = null)
     {
-      $this->log("aca");
+      // $this->log("aca");
     }
 
 
     public function beforeFilter(Event $event) {
 
-      $this->Auth->sessionKey = false;
+      // $this->Auth->sessionKey = false;
     }
 
     /**
